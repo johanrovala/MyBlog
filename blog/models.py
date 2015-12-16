@@ -3,6 +3,7 @@ from django.db import models
 # Create your models here.
 from django.db.models import permalink
 
+# Blog class
 
 class Blog(models.Model):
     title = models.CharField(max_length=100, unique=True)
@@ -18,6 +19,7 @@ class Blog(models.Model):
     def get_absolute_url(self):
         return 'view_blog_post', None, {'slug': self.slug}
 
+# Category class
 
 class Category(models.Model):
     title = models.CharField(max_length=100, unique=True)
